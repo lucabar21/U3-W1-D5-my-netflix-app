@@ -67,3 +67,10 @@ footer .container .row .col-12 p {
 .head-icon:hover {
   transform: scale(1.1);
 }
+
+#dropdown-item-button {
+  --bs-btn-border-radius: 0;
+}
+.dropdown-menu {
+  --bs-dropdown-bg: black !important;
+}
