@@ -20,10 +20,13 @@ function NetflixNavbar() {
             <Nav.Link href="#my-list">MyList</Nav.Link>
           </Nav>
           <Nav className="ms-auto d-flex gap-3 align-items-center">
-            <img src="search.svg" alt="search" />
-            <span style={{ color: "#8a8c8e" }}>KIDS</span>
-            <img src="bell.svg" alt="search" />
+            <img className="" style={{ cursor: "pointer" }} src="search.svg" alt="search" />
+            <span className="" style={{ color: "#8a8c8e", cursor: "pointer" }}>
+              KIDS
+            </span>
+            <img className="" style={{ cursor: "pointer" }} src="bell.svg" alt="search" />
             <NavDropdown
+              align="end"
               title={<img style={{ width: "30px", borderRadius: "50%" }} src="avatar.png" alt="user"></img>}
               id="basic-nav-dropdown"
             >

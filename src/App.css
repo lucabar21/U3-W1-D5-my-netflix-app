@@ -59,3 +59,11 @@ footer .container .row .col-12 p {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
+
+/* ICON HEADLINE */
+.head-icon {
+  cursor: pointer;
+}
+.head-icon:hover {
+  transform: scale(1.1);
+}

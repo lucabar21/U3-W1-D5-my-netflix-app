@@ -2,9 +2,11 @@ import { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import NetflixSingleMovie from "./NetflixSingleMovie";
+import Spinner from "react-bootstrap/Spinner";
 class NetflixMoviesRow extends Component {
   state = {
     moviesContainer: [],
+    loading: true,
   };
 
   moviesFetch = () => {
@@ -18,7 +20,7 @@ class NetflixMoviesRow extends Component {
         }
       })
       .then((movie) => {
-        this.setState({ moviesContainer: movie.Search });
+        this.setState({ moviesContainer: movie.Search, loading: false });
       })
       .catch((error) => console.log(error));
   };
@@ -27,13 +29,16 @@ class NetflixMoviesRow extends Component {
   }
   render() {
     const { query } = this.props;
+    const { loading } = this.state;
     return (
       <Container fluid className="px-5 mt-4">
         <Row>
           <h3 style={{ color: "white" }}>{query}</h3>
-          {this.state.moviesContainer.slice(0, 6).map((movie, i) => (
-            <NetflixSingleMovie key={i} movie={movie} />
-          ))}
+          {loading ? (
+            <Spinner />
+          ) : (
+            this.state.moviesContainer.slice(0, 6).map((movie, i) => <NetflixSingleMovie key={i} movie={movie} />)
+          )}
         </Row>
       </Container>
     );

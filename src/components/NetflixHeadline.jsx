@@ -21,8 +21,8 @@ const NetflixHeadline = () => {
           </div>
         </Col>
         <Col style={{ opacity: "0.7" }} xs="auto" className="ms-auto">
-          <img style={{ border: "1px solid #BFBFBF" }} src="filter.svg" alt="filter" />
-          <img style={{ border: "1px solid #BFBFBF" }} src="grid.svg" alt="grid" />
+          <img className="head-icon" style={{ border: "1px solid #BFBFBF" }} src="filter.svg" alt="filter" />
+          <img className="head-icon" style={{ border: "1px solid #BFBFBF" }} src="grid.svg" alt="grid" />
         </Col>
       </Row>
     </Container>
