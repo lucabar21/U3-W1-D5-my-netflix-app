@@ -32,7 +32,7 @@ class NetflixMoviesRow extends Component {
     const { loading } = this.state;
     return (
       <Container fluid className="px-5 mt-4">
-        <Row>
+        <Row className="justify-content-center row-gap-3">
           <h3 style={{ color: "white" }}>{query}</h3>
           {loading ? (
             <Spinner />
