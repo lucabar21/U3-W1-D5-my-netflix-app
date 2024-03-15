@@ -19,8 +19,14 @@ function NetflixNavbar() {
             <Nav.Link href="#recently-added">Recently Added</Nav.Link>
             <Nav.Link href="#my-list">MyList</Nav.Link>
           </Nav>
-          <Nav className="ms-auto">
-            <NavDropdown title="Profile" id="basic-nav-dropdown">
+          <Nav className="ms-auto d-flex gap-3 align-items-center">
+            <img src="search.svg" alt="search" />
+            <span style={{ color: "#8a8c8e" }}>KIDS</span>
+            <img src="bell.svg" alt="search" />
+            <NavDropdown
+              title={<img style={{ width: "30px", borderRadius: "50%" }} src="avatar.png" alt="user"></img>}
+              id="basic-nav-dropdown"
+            >
               <NavDropdown.Item href="#action/3.1">Your Profile</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
               <NavDropdown.Divider />

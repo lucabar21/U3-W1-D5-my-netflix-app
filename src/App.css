@@ -44,3 +44,18 @@ footer .container .row .col-12 p {
   color: #f4f4f4;
   opacity: 0.3;
 }
+
+/* PREVIEW IMG */
+@keyframes movie-hover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+#preview:hover {
+  animation-name: movie-hover;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}

@@ -30,7 +30,7 @@ class NetflixMoviesRow extends Component {
     return (
       <Container fluid className="px-5 mt-4">
         <Row>
-          <h4 style={{ color: "white" }}>{query}</h4>
+          <h3 style={{ color: "white" }}>{query}</h3>
           {this.state.moviesContainer.slice(0, 6).map((movie, i) => (
             <NetflixSingleMovie key={i} movie={movie} />
           ))}
