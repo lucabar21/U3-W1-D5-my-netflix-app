@@ -1,12 +1,11 @@
 import Card from "react-bootstrap/Card";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const MovieDetails = (props) => {
+const MovieDetails = () => {
   const [movieObject, setMovieObject] = useState(null);
   const [commentObject, setCommentObject] = useState([]);
 
-  const navigate = useNavigate();
   const params = useParams();
   console.log(params);
   console.log(params.movieId);
@@ -72,7 +71,7 @@ const MovieDetails = (props) => {
       )}
       {commentObject &&
         commentObject.map((comment) => {
-          return <p>{comment}</p>;
+          return <p style={{ color: "white" }}>{comment}</p>;
         })}
     </>
   );
