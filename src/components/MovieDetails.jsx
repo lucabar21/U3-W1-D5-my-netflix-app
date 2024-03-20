@@ -61,18 +61,28 @@ const MovieDetails = () => {
   return (
     <>
       {movieObject && (
-        <Card style={{ width: "25rem" }}>
-          <Card.Img variant="top" src={movieObject.Poster} />
-          <Card.Body>
-            <Card.Title>{movieObject.Title}</Card.Title>
-            <Card.Text>{movieObject.Plot}</Card.Text>
-          </Card.Body>
-        </Card>
+        <div>
+          <Card style={{ width: "25rem", margin: "2rem auto" }}>
+            <Card.Img variant="top" src={movieObject.Poster} />
+            <Card.Body>
+              <Card.Title>{movieObject.Title}</Card.Title>
+              <Card.Text>{movieObject.Plot}</Card.Text>
+            </Card.Body>
+            {commentObject &&
+              commentObject.map((comment, i) => {
+                return (
+                  <p key={i} style={{ color: "white" }}>
+                    {comment}
+                  </p>
+                );
+              })}
+          </Card>
+        </div>
       )}
-      {commentObject &&
+      {/* {commentObject &&
         commentObject.map((comment) => {
           return <p style={{ color: "white" }}>{comment}</p>;
-        })}
+        })} */}
     </>
   );
 };
