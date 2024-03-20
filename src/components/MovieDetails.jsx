@@ -72,7 +72,7 @@ const MovieDetails = (props) => {
       )}
       {commentObject &&
         commentObject.map((comment) => {
-          <div>{comment}</div>;
+          return <p>{comment}</p>;
         })}
     </>
   );
