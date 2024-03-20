@@ -2,8 +2,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link, useLocation } from "react-router-dom";
 
 function NetflixNavbar() {
+  const location = useLocation();
+
   return (
     <Navbar expand="md" style={{ backgroundColor: "black" }} data-bs-theme="dark">
       <Container fluid className="px-5">
@@ -13,11 +16,24 @@ function NetflixNavbar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#tv-shows">TV Shows</Nav.Link>
-            <Nav.Link href="#movies">Movies</Nav.Link>
-            <Nav.Link href="#recently-added">Recently Added</Nav.Link>
-            <Nav.Link href="#my-list">MyList</Nav.Link>
+            <Link className={location.pathname === `/` ? "nav-link active" : "nav-link"} to="/">
+              Home
+            </Link>
+            <Link className={location.pathname === `/tv-shows` ? "nav-link active" : "nav-link"} to="tv-shows">
+              TV Shows
+            </Link>
+            <Link className={location.pathname === `/movies` ? "nav-link active" : "nav-link"} to="movies">
+              Movies
+            </Link>
+            <Link
+              className={location.pathname === `/recently-added` ? "nav-link active" : "nav-link"}
+              to="recently-added"
+            >
+              Recently Added
+            </Link>
+            <Link className={location.pathname === `/my-list` ? "nav-link active" : "nav-link"} to="my-list">
+              MyList
+            </Link>
           </Nav>
           <Nav className="ms-auto d-flex gap-3 align-items-center">
             <img className="" style={{ cursor: "pointer" }} src="search.svg" alt="search" />
